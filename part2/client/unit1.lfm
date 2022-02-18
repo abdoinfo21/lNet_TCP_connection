@@ -1,0 +1,87 @@
+object Form1: TForm1
+  Left = 239
+  Height = 240
+  Top = 121
+  Width = 320
+  Caption = 'client'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnCreate = FormCreate
+  LCLVersion = '2.0.6.0'
+  object Button1: TButton
+    Left = 8
+    Height = 25
+    Top = 10
+    Width = 75
+    Caption = 'connect'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 8
+    Height = 25
+    Top = 208
+    Width = 75
+    Caption = 'send'
+    OnClick = Button2Click
+    TabOrder = 1
+  end
+  object Edit1: TEdit
+    Left = 88
+    Height = 23
+    Top = 208
+    Width = 216
+    OnEnter = Edit1Enter
+    OnExit = Edit1Exit
+    TabOrder = 2
+  end
+  object Edit2: TEdit
+    Left = 104
+    Height = 23
+    Top = 10
+    Width = 80
+    TabOrder = 3
+    Text = '127.0.0.1'
+  end
+  object Edit3: TEdit
+    Left = 224
+    Height = 23
+    Top = 10
+    Width = 80
+    TabOrder = 4
+    Text = '9000'
+  end
+  object Label1: TLabel
+    Left = 88
+    Height = 15
+    Top = 16
+    Width = 10
+    Caption = 'ip'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 192
+    Height = 15
+    Top = 16
+    Width = 22
+    Caption = 'port'
+    ParentColor = False
+  end
+  object Memo1: TMemo
+    Left = 9
+    Height = 159
+    Top = 41
+    Width = 295
+    TabOrder = 5
+  end
+  object TCP: TLTCPComponent
+    Port = 0
+    OnReceive = TCPReceive
+    OnError = TCPError
+    OnDisconnect = TCPDisconnect
+    Timeout = 0
+    ReuseAddress = False
+    left = 137
+    top = 96
+  end
+end
